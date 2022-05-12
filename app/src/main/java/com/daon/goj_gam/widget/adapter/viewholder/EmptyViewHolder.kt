@@ -7,7 +7,7 @@ import com.daon.goj_gam.util.provider.ResourcesProvider
 import com.daon.goj_gam.widget.adapter.listener.AdapterListener
 
 class EmptyViewHolder(
-    binding: ViewholderEmptyBinding,
+    private val binding: ViewholderEmptyBinding,
     viewModel: BaseViewModel,
     resourcesProvider: ResourcesProvider
 
