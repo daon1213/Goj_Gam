@@ -1,0 +1,20 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Theme.Goj_Gam" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+
+        <item name="toolbarStyle">@style/Widget.gojgam.Toolbar</item>
+        <item name="toolbarWithArrowButtonStyle">@style/Widget.gojgam.Toolbar.WithArrow</item>
+        <item name="toolbarWithCloseButtonStyle">@style/Widget.gojgam.Toolbar.WithClose</item>
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">@color/purple_500</item>
+        <item name="colorPrimaryVariant">@color/purple_700</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">@color/teal_200</item>
+        <item name="colorSecondaryVariant">@color/teal_700</item>
+        <item name="colorOnSecondary">@color/black</item>
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor" tools:targetApi="l" tools:ignore="ObsoleteSdkInt">@color/orange</item>
+        <!-- Customize your theme here. -->
+    </style>
+</resources>
