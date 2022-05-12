@@ -1,7 +1,11 @@
 package com.daon.goj_gam.di
 
 
+import com.daon.goj_gam.data.repository.DefaultRestaurantRepository
+import com.daon.goj_gam.data.repository.RestaurantRepository
 import com.daon.goj_gam.screen.main.home.HomeViewModel
+import com.daon.goj_gam.screen.main.home.restaurant.RestaurantCategory
+import com.daon.goj_gam.screen.main.home.restaurant.RestaurantListViewModel
 import com.daon.goj_gam.screen.main.my.MyViewModel
 import com.daon.goj_gam.util.provider.DefaultResourcesProvider
 import kotlinx.coroutines.Dispatchers
@@ -13,6 +17,9 @@ val appModule = module {
 
     viewModel { HomeViewModel() }
     viewModel { MyViewModel() }
+    viewModel { (restaurantCategory: RestaurantCategory) -> RestaurantListViewModel(restaurantCategory, get()) }
+
+    single<RestaurantRepository> { DefaultRestaurantRepository(get(), get()) }
 
     single { providerGsonConvertFactory() }
     single { buildOkHttpClient() }
