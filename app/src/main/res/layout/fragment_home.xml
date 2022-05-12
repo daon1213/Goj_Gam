@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        style="?attr/toolbarStyle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="MissingConstraints">
+
+        <ProgressBar
+            android:id="@+id/locationLoading"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_gravity="center"
+            android:indeterminateTint="@color/orange" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            tools:text="현재위치" />
+
+    </androidx.appcompat.widget.Toolbar>
+
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/tabLayout"
+        android:layout_width="0dp"
+        android:layout_height="40dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/toolbar" />
+
+    <View
+        android:layout_width="0dp"
+        android:layout_height="0.5dp"
+        android:background="@color/gray_A8"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tabLayout" />
+
+    <HorizontalScrollView
+        android:id="@+id/filterScrollView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:scrollbars="none"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tabLayout">
+
+        <com.google.android.material.chip.ChipGroup
+            android:id="@+id/filterChipGroup"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingHorizontal="12dp"
+            app:checkedChip="@id/chipDefault"
+            app:chipSpacingHorizontal="4dp"
+            app:chipSpacingVertical="6dp"
+            app:selectionRequired="true"
+            app:singleLine="true"
+            app:singleSelection="true"
+            tools:visibility="visible">
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chipInitialize"
+                style="@style/Widget.gojgam.Chip"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/initialize"
+                android:visibility="gone"
+                app:chipIconEnabled="true"
+                app:chipIconTint="@color/icon_filter_chip_state_list_reset" />
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chipFastDelivery"
+                style="@style/Widget.gojgam.Chip"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/fast_delivery"
+                app:chipIconEnabled="true"
+                app:chipIconTint="@color/icon_filter_chip_state_list_reset" />
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chipLowDeliveryTip"
+                style="@style/Widget.gojgam.Chip"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/low_delivery_tip"
+                app:chipIconEnabled="true"
+                app:chipIconTint="@color/icon_filter_chip_state_list_reset" />
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chipDefault"
+                style="@style/Widget.gojgam.Chip"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/default_order"
+                app:chipIconEnabled="true"
+                app:chipIconTint="@color/icon_filter_chip_state_list_reset"
+                tools:ignore="InvalidId" />
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chipTopRate"
+                style="@style/Widget.gojgam.Chip"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/top_rate"
+                app:chipIconEnabled="true"
+                app:chipIconTint="@color/icon_filter_chip_state_list_reset" />
+
+        </com.google.android.material.chip.ChipGroup>
+
+    </HorizontalScrollView>
+
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/viewPager"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/filterScrollView" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/basketButtonContainer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/basketButton"
+            android:layout_width="72dp"
+            android:layout_height="72dp"
+            android:layout_margin="24dp"
+            android:backgroundTint="@color/orange"
+            android:src="@drawable/ic_basket"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:tint="@color/white"
+            tools:ignore="ContentDescription" />
+
+        <TextView
+            android:id="@+id/basketCountTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:elevation="16dp"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@id/basketButton"
+            app:layout_constraintEnd_toEndOf="@id/basketButton"
+            app:layout_constraintHorizontal_bias="0.8"
+            app:layout_constraintStart_toStartOf="@id/basketButton"
+            app:layout_constraintTop_toTopOf="@id/basketButton"
+            app:layout_constraintVertical_bias="0.5"
+            tools:text="+1" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
