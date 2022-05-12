@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Goj_Gam</string>
+    <string name="home">Home</string>
+    <string name="my">My</string>
+    <string name="fast_delivery">배달 빠른 순</string>
+    <string name="low_delivery_tip">배달비 낮은 순</string>
+    <string name="default_order">기본 순</string>
+    <string name="top_rate">별점 높은 순</string>
+    <string name="initialize">초기화</string>
+</resources>
