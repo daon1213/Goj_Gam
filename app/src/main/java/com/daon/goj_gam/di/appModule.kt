@@ -15,8 +15,8 @@ import org.koin.dsl.module
 
 val appModule = module {
 
-    viewModel { HomeViewModel() }
-    viewModel { MyViewModel() }
+    viewModel { return@viewModel HomeViewModel() }
+    viewModel { return@viewModel MyViewModel() }
     viewModel { (restaurantCategory: RestaurantCategory) -> RestaurantListViewModel(restaurantCategory, get()) }
 
     single<RestaurantRepository> { DefaultRestaurantRepository(get(), get()) }
