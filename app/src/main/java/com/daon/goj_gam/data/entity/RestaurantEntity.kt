@@ -15,5 +15,5 @@ data class RestaurantEntity(
     val reviewCount: Int,
     val deliveryTimeRange: Pair<Int, Int>,
     val deliveryTipRange: Pair<Int, Int>,
-    val restaurantInfold: Int
-): Entity, Parcelable
+    val restaurantInfoId: Long,
+) : Entity, Parcelable
