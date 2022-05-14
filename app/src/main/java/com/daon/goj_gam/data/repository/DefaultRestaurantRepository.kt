@@ -18,7 +18,7 @@ class DefaultRestaurantRepository(
         listOf(
             RestaurantEntity(
                 id = 0,
-                restaurantInfold = 0,
+                restaurantInfoId = 0,
                 restaurantCategory = RestaurantCategory.ALL,
                 restaurantTitle = "마포화로집",
                 restaurantImageUrl = "https://picsum.photos/200",
@@ -29,7 +29,7 @@ class DefaultRestaurantRepository(
             ),
             RestaurantEntity(
                 id = 1,
-                restaurantInfold = 1,
+                restaurantInfoId = 1,
                 restaurantCategory = RestaurantCategory.ALL,
                 restaurantTitle = "옛날우동&덮밥",
                 restaurantImageUrl = "https://picsum.photos/200",
@@ -40,7 +40,7 @@ class DefaultRestaurantRepository(
             ),
             RestaurantEntity(
                 id = 2,
-                restaurantInfold = 2,
+                restaurantInfoId = 2,
                 restaurantCategory = RestaurantCategory.ALL,
                 restaurantTitle = "마스터석쇠불고기&냉면plus",
                 restaurantImageUrl = "https://picsum.photos/200",
@@ -51,7 +51,7 @@ class DefaultRestaurantRepository(
             ),
             RestaurantEntity(
                 id = 3,
-                restaurantInfold = 3,
+                restaurantInfoId = 3,
                 restaurantCategory = RestaurantCategory.ALL,
                 restaurantTitle = "마스터통삼겹",
                 restaurantImageUrl = "https://picsum.photos/200",
@@ -62,7 +62,7 @@ class DefaultRestaurantRepository(
             ),
             RestaurantEntity(
                 id = 4,
-                restaurantInfold = 4,
+                restaurantInfoId = 4,
                 restaurantCategory = RestaurantCategory.ALL,
                 restaurantTitle = "창영이 족발&보쌈",
                 restaurantImageUrl = "https://picsum.photos/200",
@@ -73,7 +73,7 @@ class DefaultRestaurantRepository(
             ),
             RestaurantEntity(
                 id = 5,
-                restaurantInfold = 5,
+                restaurantInfoId = 5,
                 restaurantCategory = RestaurantCategory.ALL,
                 restaurantTitle = "콩나물국밥&코다리조림 콩심 인천논현점",
                 restaurantImageUrl = "https://picsum.photos/200",
@@ -84,7 +84,7 @@ class DefaultRestaurantRepository(
             ),
             RestaurantEntity(
                 id = 6,
-                restaurantInfold = 6,
+                restaurantInfoId = 6,
                 restaurantCategory = RestaurantCategory.ALL,
                 restaurantTitle = "김여사 칼국수&냉면 논현점",
                 restaurantImageUrl = "https://picsum.photos/200",
@@ -95,7 +95,7 @@ class DefaultRestaurantRepository(
             ),
             RestaurantEntity(
                 id = 7,
-                restaurantInfold = 7,
+                restaurantInfoId = 7,
                 restaurantCategory = RestaurantCategory.ALL,
                 restaurantTitle = "돈키호테",
                 restaurantImageUrl = "https://picsum.photos/200",
