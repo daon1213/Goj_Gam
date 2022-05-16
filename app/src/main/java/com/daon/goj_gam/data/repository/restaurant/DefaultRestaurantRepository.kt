@@ -1,4 +1,4 @@
-package com.daon.goj_gam.data.repository
+package com.daon.goj_gam.data.repository.restaurant
 
 import com.daon.goj_gam.data.entity.RestaurantEntity
 import com.daon.goj_gam.screen.main.home.restaurant.RestaurantCategory
