@@ -18,9 +18,10 @@ import org.koin.dsl.module
 
 val appModule = module {
 
-    viewModel { HomeViewModel() }
+    viewModel { HomeViewModel(get()) }
     viewModel { MyViewModel() }
     viewModel { (restaurantCategory: RestaurantCategory) -> RestaurantListViewModel(restaurantCategory, get()) }
+
 
     single <RestaurantRepository> { DefaultRestaurantRepository(get(), get()) }
     single <MapRepository> { DefaultMapRepository(get(), get()) }
@@ -29,6 +30,8 @@ val appModule = module {
     single { buildOkHttpClient() }
 
     single { provideRetrofit(get(), get()) }
+
+    single { provideMapApiService(get()) }
 
     single<ResourcesProvider> {DefaultResourcesProvider(androidApplication())}
 
