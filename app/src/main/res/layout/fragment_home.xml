@@ -10,10 +10,9 @@
         style="?attr/toolbarStyle"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:gravity="center"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        tools:ignore="MissingConstraints">
+        app:layout_constraintTop_toTopOf="parent">
 
         <ProgressBar
             android:id="@+id/locationLoading"
@@ -23,6 +22,7 @@
             android:indeterminateTint="@color/orange" />
 
         <TextView
+            android:id="@+id/locationTitleText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
@@ -37,9 +37,15 @@
         android:id="@+id/tabLayout"
         android:layout_width="0dp"
         android:layout_height="40dp"
+        android:visibility="gone"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/toolbar" />
+        app:layout_constraintTop_toBottomOf="@id/toolbar"
+        app:tabGravity="fill"
+        app:tabIndicatorFullWidth="false"
+        app:tabMaxWidth="0dp"
+        app:tabMode="auto"
+        tools:visibility="visible" />
 
     <View
         android:layout_width="0dp"
@@ -54,9 +60,11 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:scrollbars="none"
+        android:visibility="gone"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tabLayout">
+        app:layout_constraintTop_toBottomOf="@id/tabLayout"
+        tools:visibility="visible">
 
         <com.google.android.material.chip.ChipGroup
             android:id="@+id/filterChipGroup"
@@ -78,8 +86,10 @@
                 android:layout_height="wrap_content"
                 android:text="@string/initialize"
                 android:visibility="gone"
+                app:chipIcon="@drawable/ic_refresh"
                 app:chipIconEnabled="true"
-                app:chipIconTint="@color/icon_filter_chip_state_list_reset" />
+                app:chipIconTint="@color/icon_filter_chip_state_list_reset"
+                tools:visibility="visible" />
 
             <com.google.android.material.chip.Chip
                 android:id="@+id/chipFastDelivery"
@@ -106,8 +116,7 @@
                 android:layout_height="wrap_content"
                 android:text="@string/default_order"
                 app:chipIconEnabled="true"
-                app:chipIconTint="@color/icon_filter_chip_state_list_reset"
-                tools:ignore="InvalidId" />
+                app:chipIconTint="@color/icon_filter_chip_state_list_reset" />
 
             <com.google.android.material.chip.Chip
                 android:id="@+id/chipTopRate"
@@ -115,6 +124,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/top_rate"
+                app:chipIcon="@drawable/ic_star"
                 app:chipIconEnabled="true"
                 app:chipIconTint="@color/icon_filter_chip_state_list_reset" />
 
@@ -126,9 +136,12 @@
         android:id="@+id/viewPager"
         android:layout_width="0dp"
         android:layout_height="0dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/filterScrollView" />
+        app:layout_constraintTop_toBottomOf="@id/filterScrollView"
+        tools:visibility="visible" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/basketButtonContainer"
