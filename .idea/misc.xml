@@ -9,16 +9,19 @@
         <entry key="..\:/Users/user/AndroidStudioProjects/Goj_Gam/app/src/main/res/drawable/ic_basket.xml" value="0.1" />
         <entry key="..\:/Users/user/AndroidStudioProjects/Goj_Gam/app/src/main/res/drawable/ic_clock.xml" value="0.1" />
         <entry key="..\:/Users/user/AndroidStudioProjects/Goj_Gam/app/src/main/res/drawable/ic_close.xml" value="0.1" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/Goj_Gam/app/src/main/res/drawable/ic_down.xml" value="0.1" />
         <entry key="..\:/Users/user/AndroidStudioProjects/Goj_Gam/app/src/main/res/drawable/ic_home.xml" value="0.1" />
         <entry key="..\:/Users/user/AndroidStudioProjects/Goj_Gam/app/src/main/res/drawable/ic_launcher_background.xml" value="0.1" />
         <entry key="..\:/Users/user/AndroidStudioProjects/Goj_Gam/app/src/main/res/drawable/ic_my.xml" value="0.1" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/Goj_Gam/app/src/main/res/drawable/ic_refresh.xml" value="0.1" />
         <entry key="..\:/Users/user/AndroidStudioProjects/Goj_Gam/app/src/main/res/drawable/ic_star.xml" value="0.1" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/Goj_Gam/app/src/main/res/drawable/ic_thunder.xml" value="0.1" />
         <entry key="..\:/Users/user/AndroidStudioProjects/Goj_Gam/app/src/main/res/layout/activity_main.xml" value="0.1" />
-        <entry key="..\:/Users/user/AndroidStudioProjects/Goj_Gam/app/src/main/res/layout/fragment_home.xml" value="0.264" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/Goj_Gam/app/src/main/res/layout/fragment_home.xml" value="0.176" />
         <entry key="..\:/Users/user/AndroidStudioProjects/Goj_Gam/app/src/main/res/layout/fragment_my.xml" value="0.1" />
-        <entry key="..\:/Users/user/AndroidStudioProjects/Goj_Gam/app/src/main/res/layout/fragment_restaurant_list.xml" value="0.2111111111111111" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/Goj_Gam/app/src/main/res/layout/fragment_restaurant_list.xml" value="0.1" />
         <entry key="..\:/Users/user/AndroidStudioProjects/Goj_Gam/app/src/main/res/layout/viewholder_empty.xml" value="0.1" />
-        <entry key="..\:/Users/user/AndroidStudioProjects/Goj_Gam/app/src/main/res/layout/viewholder_restaurant.xml" value="0.20601851851851852" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/Goj_Gam/app/src/main/res/layout/viewholder_restaurant.xml" value="0.1" />
         <entry key="..\:/Users/user/AndroidStudioProjects/Goj_Gam/app/src/main/res/menu/bottom_navigation_menu.xml" value="0.1" />
       </map>
     </option>
@@ -28,7 +31,7 @@
       <item index="0" class="java.lang.String" itemvalue="androidx.annotation.StringRes" />
     </list>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_17_PREVIEW" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_16" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
   <component name="ProjectType">
