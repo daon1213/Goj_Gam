@@ -7,13 +7,13 @@
     </style>
 
     <style name="Widget.gojgam.Toolbar.WithArrow" parent="Widget.gojgam.Toolbar">
-        <item name="android:navigationIcon">@drawable/ic_back_arrow</item>
-        <item name="android:title">@null</item>
+        <item name="navigationIcon">@drawable/ic_back_arrow</item>
+        <item name="android:background">@color/white</item>
     </style>
 
     <style name="Widget.gojgam.Toolbar.WithClose" parent="Widget.gojgam.Toolbar">
         <item name="android:navigationIcon">@drawable/ic_close</item>
-        <item name="android:title">@null</item>
+        <item name="android:background">@color/white</item>
     </style>
 
     <style name="Widget.gojgam.Chip" parent="Widget.MaterialComponents.Chip.Choice">
