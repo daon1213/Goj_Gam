@@ -1,18 +1,24 @@
 package com.daon.goj_gam.di
 
 import com.daon.goj_gam.BuildConfig
+import com.daon.goj_gam.data.network.MapApiService
+import com.daon.goj_gam.data.url.Url
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import java.util.concurrent.TimeUnit
 
+fun provideMapApiService(retrofit: Retrofit): MapApiService {
+    return retrofit.create(MapApiService::class.java)
+}
+
 fun provideRetrofit(
     okHttpClient: OkHttpClient,
     gsonConverterFactory: GsonConverterFactory
 ): Retrofit {
     return Retrofit.Builder()
-        .baseUrl("")
+        .baseUrl(Url.TMAP_URL)
         .addConverterFactory(gsonConverterFactory)
         .client(okHttpClient)
         .build()
