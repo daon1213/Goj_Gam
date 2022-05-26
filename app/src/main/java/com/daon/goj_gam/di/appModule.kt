@@ -1,6 +1,7 @@
 package com.daon.goj_gam.di
 
 
+import com.daon.goj_gam.data.entity.MapSearchInfoEntity
 import com.daon.goj_gam.data.repository.map.DefaultMapRepository
 import com.daon.goj_gam.data.repository.map.MapRepository
 import com.daon.goj_gam.data.repository.restaurant.DefaultRestaurantRepository
@@ -9,6 +10,7 @@ import com.daon.goj_gam.screen.main.home.HomeViewModel
 import com.daon.goj_gam.screen.main.home.restaurant.RestaurantCategory
 import com.daon.goj_gam.screen.main.home.restaurant.RestaurantListViewModel
 import com.daon.goj_gam.screen.main.my.MyViewModel
+import com.daon.goj_gam.screen.mylocation.MyLocationViewModel
 import com.daon.goj_gam.util.provider.DefaultResourcesProvider
 import com.daon.goj_gam.util.provider.ResourcesProvider
 import kotlinx.coroutines.Dispatchers
@@ -21,7 +23,7 @@ val appModule = module {
     viewModel { HomeViewModel(get()) }
     viewModel { MyViewModel() }
     viewModel { (restaurantCategory: RestaurantCategory) -> RestaurantListViewModel(restaurantCategory, get()) }
-
+    viewModel { (mapSearchInfoEntity: MapSearchInfoEntity) -> MyLocationViewModel(mapSearchInfoEntity, get())}
 
     single <RestaurantRepository> { DefaultRestaurantRepository(get(), get()) }
     single <MapRepository> { DefaultMapRepository(get(), get()) }
