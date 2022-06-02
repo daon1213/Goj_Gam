@@ -116,18 +116,27 @@ class HomeFragment : BaseFragment<HomeViewModel, FragmentHomeBinding>() {
 
         if (::viewPagerAdapter.isInitialized.not()) {
             val restaurantListFragment = restaurantCategories.map {
-                RestaurantListFragment.newInstance(it)
+                RestaurantListFragment.newInstance(it, locationLatLng)
             }
             viewPagerAdapter = RestaurantListFragmentPagerAdapter(
                 this@HomeFragment,
-                restaurantListFragment
+                restaurantListFragment,
+                locationLatLng
             )
             viewPager.adapter = viewPagerAdapter
+
+            // 1. page 가 변경될 때마다 fragment 를 새로 만들지 않고 재사용
+            viewPager.offscreenPageLimit = restaurantCategories.size
+            TabLayoutMediator(tabLayout, viewPager) { tab, position ->
+                tab.setText(restaurantCategories[position].categoryNameId)
+            }.attach()
         }
-        viewPager.offscreenPageLimit = restaurantCategories.size
-        TabLayoutMediator(tabLayout, viewPager) { tab, position ->
-            tab.setText(restaurantCategories[position].categoryNameId)
-        }.attach()
+        if (locationLatLng != viewPagerAdapter.locationLatLngEntity) {
+            viewPagerAdapter.locationLatLngEntity = locationLatLng
+            viewPagerAdapter.fragmentList.forEach {
+                it.viewModel.setLocationLatLng(locationLatLng)
+            }
+        }
     }
 
     private fun getMyLocation() {
