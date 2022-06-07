@@ -43,9 +43,12 @@
         app:layout_constraintTop_toBottomOf="@id/toolbar"
         app:tabGravity="fill"
         app:tabIndicatorFullWidth="false"
+        app:tabIndicatorColor="@color/orange"
+        app:tabSelectedTextColor="@color/white"
         app:tabMaxWidth="0dp"
         app:tabMode="auto"
-        tools:visibility="visible" />
+        tools:visibility="visible"
+        />
 
     <View
         android:layout_width="0dp"
