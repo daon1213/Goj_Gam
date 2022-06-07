@@ -18,6 +18,7 @@ import com.daon.goj_gam.databinding.FragmentHomeBinding
 import com.daon.goj_gam.screen.base.BaseFragment
 import com.daon.goj_gam.screen.main.home.restaurant.RestaurantCategory
 import com.daon.goj_gam.screen.main.home.restaurant.RestaurantListFragment
+import com.daon.goj_gam.screen.main.home.restaurant.RestaurantOrder
 import com.daon.goj_gam.screen.mylocation.MyLocationActivity
 import com.daon.goj_gam.widget.adapter.RestaurantListFragmentPagerAdapter
 import com.google.android.material.tabs.TabLayoutMediator
@@ -87,6 +88,9 @@ class HomeFragment : BaseFragment<HomeViewModel, FragmentHomeBinding>() {
                 binding.filterScrollView.isVisible = true
                 binding.viewPager.isVisible = true
                 initViewPager(it.mapSearchInfo.locationLatLng)
+                if (it.isLocationSame.not()) {
+                    Toast.makeText(requireContext(), R.string.request_check_location, Toast.LENGTH_SHORT).show()
+                }
             }
             is HomeState.Error -> {
                 binding.locationLoading.isGone = true
@@ -109,12 +113,43 @@ class HomeFragment : BaseFragment<HomeViewModel, FragmentHomeBinding>() {
                 )
             }
         }
+        orderChipGroup.setOnCheckedChangeListener { _, checkedId ->
+            when (checkedId) {
+                R.id.chipDefault -> { // 기본순
+                    chipInitialize.isGone = true
+                    changeRestaurantOrder(RestaurantOrder.DEFAULT)
+                }
+                R.id.chipInitialize -> { // 초기화
+                    chipDefault.isChecked = true
+                    chipInitialize.isGone = true
+                }
+                R.id.chipFastDelivery -> { // 배달 빠른 순
+                    chipInitialize.isVisible = true
+                    changeRestaurantOrder(RestaurantOrder.FAST_DELIVERY)
+                }
+                R.id.chipLowDeliveryTip -> { // 배달 팁 낮은 순
+                    chipInitialize.isVisible = true
+                    changeRestaurantOrder(RestaurantOrder.LOW_DELIVERY_TIP)
+                }
+                R.id.chipTopRate -> { // 별점 높은 순
+                    chipInitialize.isVisible = true
+                    changeRestaurantOrder(RestaurantOrder.TOP_RATE)
+                }
+            }
+        }
+    }
+
+    private fun changeRestaurantOrder(order: RestaurantOrder) {
+        viewPagerAdapter.fragmentList.forEach {
+            it.viewModel.setRestaurantOrder(order)
+        }
     }
 
     private fun initViewPager(locationLatLng: LocationLatLngEntity) = with(binding) {
         val restaurantCategories = RestaurantCategory.values()
 
         if (::viewPagerAdapter.isInitialized.not()) {
+            orderChipGroup.isVisible = true
             val restaurantListFragment = restaurantCategories.map {
                 RestaurantListFragment.newInstance(it, locationLatLng)
             }
