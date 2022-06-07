@@ -42,13 +42,12 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/toolbar"
         app:tabGravity="fill"
-        app:tabIndicatorFullWidth="false"
         app:tabIndicatorColor="@color/orange"
-        app:tabSelectedTextColor="@color/white"
+        app:tabIndicatorFullWidth="false"
         app:tabMaxWidth="0dp"
         app:tabMode="auto"
-        tools:visibility="visible"
-        />
+        app:tabSelectedTextColor="@color/white"
+        tools:visibility="visible" />
 
     <View
         android:layout_width="0dp"
@@ -65,15 +64,17 @@
         android:scrollbars="none"
         android:visibility="gone"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tabLayout"
         tools:visibility="visible">
 
         <com.google.android.material.chip.ChipGroup
-            android:id="@+id/filterChipGroup"
+            android:id="@+id/orderChipGroup"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:paddingHorizontal="12dp"
+            android:visibility="gone"
             app:checkedChip="@id/chipDefault"
             app:chipSpacingHorizontal="4dp"
             app:chipSpacingVertical="6dp"
@@ -100,8 +101,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/fast_delivery"
+                app:chipIcon="@drawable/ic_thunder"
                 app:chipIconEnabled="true"
-                app:chipIconTint="@color/icon_filter_chip_state_list_reset" />
+                app:chipIconTint="@color/icon_filter_chip_state_list_delivery_fast" />
 
             <com.google.android.material.chip.Chip
                 android:id="@+id/chipLowDeliveryTip"
@@ -109,8 +111,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/low_delivery_tip"
+                app:chipIcon="@drawable/ic_down"
                 app:chipIconEnabled="true"
-                app:chipIconTint="@color/icon_filter_chip_state_list_reset" />
+                app:chipIconTint="@color/icon_filter_chip_state_list_delivery_tip" />
 
             <com.google.android.material.chip.Chip
                 android:id="@+id/chipDefault"
