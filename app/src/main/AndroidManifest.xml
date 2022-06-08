@@ -24,11 +24,11 @@
             </intent-filter>
         </activity>
         <activity android:name=".screen.mylocation.MyLocationActivity" />
+        <activity android:name=".screen.main.home.restaurant.detail.RestaurantDetailActivity" />
 
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="@string/google_map" />
-
     </application>
 
 </manifest>
