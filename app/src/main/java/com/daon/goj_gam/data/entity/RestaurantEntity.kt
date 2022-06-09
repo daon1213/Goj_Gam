@@ -16,4 +16,5 @@ data class RestaurantEntity(
     val deliveryTimeRange: Pair<Int, Int>,
     val deliveryTipRange: Pair<Int, Int>,
     val restaurantInfoId: Long,
+    val restaurantTelNumber: String?
 ) : Entity, Parcelable
