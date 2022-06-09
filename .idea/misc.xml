@@ -10,6 +10,8 @@
         <entry key="..\:/Users/user/AndroidStudioProjects/Goj_Gam/app/src/main/res/drawable/ic_clock.xml" value="0.1" />
         <entry key="..\:/Users/user/AndroidStudioProjects/Goj_Gam/app/src/main/res/drawable/ic_close.xml" value="0.1" />
         <entry key="..\:/Users/user/AndroidStudioProjects/Goj_Gam/app/src/main/res/drawable/ic_down.xml" value="0.1" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/Goj_Gam/app/src/main/res/drawable/ic_heart_disable.xml" value="0.1" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/Goj_Gam/app/src/main/res/drawable/ic_heart_enable.xml" value="0.2" />
         <entry key="..\:/Users/user/AndroidStudioProjects/Goj_Gam/app/src/main/res/drawable/ic_home.xml" value="0.1" />
         <entry key="..\:/Users/user/AndroidStudioProjects/Goj_Gam/app/src/main/res/drawable/ic_launcher_background.xml" value="0.1" />
         <entry key="..\:/Users/user/AndroidStudioProjects/Goj_Gam/app/src/main/res/drawable/ic_my.xml" value="0.1" />
@@ -18,7 +20,8 @@
         <entry key="..\:/Users/user/AndroidStudioProjects/Goj_Gam/app/src/main/res/drawable/ic_thunder.xml" value="0.1" />
         <entry key="..\:/Users/user/AndroidStudioProjects/Goj_Gam/app/src/main/res/layout/activity_main.xml" value="0.1" />
         <entry key="..\:/Users/user/AndroidStudioProjects/Goj_Gam/app/src/main/res/layout/activity_my_location.xml" value="0.175" />
-        <entry key="..\:/Users/user/AndroidStudioProjects/Goj_Gam/app/src/main/res/layout/fragment_home.xml" value="0.1" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/Goj_Gam/app/src/main/res/layout/activity_restaurant_detail.xml" value="0.23072916666666668" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/Goj_Gam/app/src/main/res/layout/fragment_home.xml" value="0.24653739612188366" />
         <entry key="..\:/Users/user/AndroidStudioProjects/Goj_Gam/app/src/main/res/layout/fragment_my.xml" value="0.1" />
         <entry key="..\:/Users/user/AndroidStudioProjects/Goj_Gam/app/src/main/res/layout/fragment_restaurant_list.xml" value="0.1" />
         <entry key="..\:/Users/user/AndroidStudioProjects/Goj_Gam/app/src/main/res/layout/viewholder_empty.xml" value="0.1" />
