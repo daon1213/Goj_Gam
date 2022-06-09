@@ -17,6 +17,7 @@ data class RestaurantModel(
     val deliveryTimeRange: Pair<Int, Int>,
     val deliveryTipRange: Pair<Int, Int>,
     val restaurantInfoId: Long,
+    val restaurantTelNumber: String?,
 ) : Model(id, type) {
 
     fun toEntity() = RestaurantEntity(
@@ -28,7 +29,8 @@ data class RestaurantModel(
         reviewCount,
         deliveryTimeRange,
         deliveryTipRange,
-        restaurantInfoId
+        restaurantInfoId,
+        restaurantTelNumber
     )
 
 }
