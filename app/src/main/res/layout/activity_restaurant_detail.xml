@@ -49,10 +49,12 @@
             android:layout_width="72dp"
             android:layout_height="72dp"
             android:layout_margin="24dp"
+            android:backgroundTint="@color/orange"
             android:src="@drawable/ic_basket"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:tint="@color/white" />
+            app:tint="@color/white"
+            tools:ignore="ContentDescription" />
 
         <TextView
             android:id="@+id/basketCountTextView"
@@ -101,7 +103,8 @@
                     android:background="@color/orange_yellow"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:ignore="ContentDescription" />
 
                 <androidx.cardview.widget.CardView
                     android:id="@+id/cardContainer"
@@ -233,7 +236,8 @@
                     android:textStyle="bold"
                     app:layout_constraintBottom_toTopOf="@id/deliveryTipTitleText"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/cardContainer" />
+                    app:layout_constraintTop_toBottomOf="@id/cardContainer"
+                    tools:ignore="HardcodedText" />
 
                 <TextView
                     android:id="@+id/deliveryTimeText"
@@ -255,7 +259,8 @@
                     android:textStyle="bold"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="@id/deliveryTimeTitleText"
-                    app:layout_constraintTop_toBottomOf="@id/deliveryTimeTitleText" />
+                    app:layout_constraintTop_toBottomOf="@id/deliveryTimeTitleText"
+                    tools:ignore="HardcodedText" />
 
                 <TextView
                     android:id="@+id/deliveryTipText"
