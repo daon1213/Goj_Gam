@@ -1,10 +1,11 @@
 package com.daon.goj_gam.screen.main.home.restaurant
 
-import android.widget.Toast
 import androidx.core.os.bundleOf
+import com.daon.goj_gam.data.entity.LocationLatLngEntity
 import com.daon.goj_gam.databinding.FragmentRestaurantListBinding
 import com.daon.goj_gam.model.restaurant.RestaurantModel
 import com.daon.goj_gam.screen.base.BaseFragment
+import com.daon.goj_gam.screen.main.home.restaurant.detail.RestaurantDetailActivity
 import com.daon.goj_gam.util.provider.ResourcesProvider
 import com.daon.goj_gam.widget.adapter.ModelRecyclerAdapter
 import com.daon.goj_gam.widget.adapter.listener.restaurant.RestaurantListListener
@@ -17,7 +18,14 @@ class RestaurantListFragment :
 
     private val restaurantCategory by lazy { arguments?.getSerializable(RESTAURANT_CATEGORY_KEY) as RestaurantCategory }
 
-    override val viewModel by viewModel<RestaurantListViewModel> { parametersOf(restaurantCategory) }
+    private val locationLatLng by lazy { arguments?.getParcelable<LocationLatLngEntity>(LOCATION_KEY) }
+
+    override val viewModel: RestaurantListViewModel by viewModel {
+        parametersOf(
+            restaurantCategory,
+            locationLatLng
+        )
+    }
 
     override fun getViewBinding(): FragmentRestaurantListBinding =
         FragmentRestaurantListBinding.inflate(layoutInflater)
@@ -30,7 +38,12 @@ class RestaurantListFragment :
             resourcesProvider,
             adapterListener = object : RestaurantListListener {
                 override fun onClickItem(model: RestaurantModel) {
-                    Toast.makeText(requireContext(), "$model", Toast.LENGTH_SHORT).show()
+                    startActivity(
+                        RestaurantDetailActivity.newIntent(
+                            requireContext(),
+                            model.toEntity()
+                        )
+                    )
                 }
             })
 
@@ -46,11 +59,17 @@ class RestaurantListFragment :
 
     companion object {
         const val RESTAURANT_CATEGORY_KEY = "restaurantCategory"
+        const val LOCATION_KEY = "location"
+        const val RESTAURANT_KEY = "Restaurant"
 
-        fun newInstance(restaurantCategory: RestaurantCategory): RestaurantListFragment {
+        fun newInstance(
+            restaurantCategory: RestaurantCategory,
+            locationLatLng: LocationLatLngEntity
+        ): RestaurantListFragment {
             return RestaurantListFragment().apply {
                 arguments = bundleOf(
-                    RESTAURANT_CATEGORY_KEY to restaurantCategory
+                    RESTAURANT_CATEGORY_KEY to restaurantCategory,
+                    LOCATION_KEY to locationLatLng
                 )
             }
         }
