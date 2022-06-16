@@ -10,10 +10,18 @@
         android:icon="@drawable/ic_home"/>
 
     <item
+        android:id="@+id/menu_liked"
+        android:title="@string/menu_like"
+        app:itemTextColor="@color/bottom_icon_color"
+        app:itemIconTint="@color/bottom_icon_color"
+        android:icon="@drawable/ic_heart_disable" />
+
+    <item
         android:id="@+id/menu_my"
         android:title="@string/my"
         app:itemTextColor="@color/bottom_icon_color"
         app:itemIconTint="@color/bottom_icon_color"
         android:icon="@drawable/ic_my"/>
+
 
 </menu>
