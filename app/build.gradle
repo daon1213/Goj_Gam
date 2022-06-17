@@ -61,11 +61,10 @@ dependencies {
     implementation 'androidx.core:core-ktx:1.7.0'
     implementation 'androidx.fragment:fragment-ktx:1.4.1'
 
-    // Koin DI
     // Koin Core features
-    implementation 'io.insert-koin:koin-core:3.2.0-beta-1'
+    implementation 'io.insert-koin:koin-core:3.2.0'
     // Koin Test features
-    testImplementation 'io.insert-koin:koin-test:3.2.0-beta-1'
+    testImplementation 'io.insert-koin:koin-test:3.2.0'
 
     // Koin main features for Android
     implementation 'io.insert-koin:koin-android:3.2.0-beta-1'
