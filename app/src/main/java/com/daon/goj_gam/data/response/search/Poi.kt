@@ -1,4 +1,4 @@
-package com.daon.goj_gam.data.reponse.search
+package com.daon.goj_gam.data.response.search
 
 data class Poi(
     //POI 의  id
