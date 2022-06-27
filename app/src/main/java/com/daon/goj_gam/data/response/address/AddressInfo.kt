@@ -1,7 +1,7 @@
-package com.daon.goj_gam.data.reponse.address
+package com.daon.goj_gam.data.response.address
 
-import com.daon.goj_gam.data.entity.LocationLatLngEntity
-import com.daon.goj_gam.data.entity.MapSearchInfoEntity
+import com.daon.goj_gam.data.entity.impl.LocationLatLngEntity
+import com.daon.goj_gam.data.entity.impl.MapSearchInfoEntity
 import com.google.gson.annotations.Expose
 import com.google.gson.annotations.SerializedName
 
