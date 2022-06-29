@@ -1,7 +1,8 @@
-package com.daon.goj_gam.data.entity
+package com.daon.goj_gam.data.entity.impl
 
 import android.os.Parcelable
 import androidx.room.PrimaryKey
+import com.daon.goj_gam.data.entity.Entity
 import kotlinx.parcelize.Parcelize
 
 @Parcelize
