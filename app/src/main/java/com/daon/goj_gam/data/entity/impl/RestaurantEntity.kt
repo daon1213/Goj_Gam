@@ -1,8 +1,9 @@
-package com.daon.goj_gam.data.entity
+package com.daon.goj_gam.data.entity.impl
 
 import android.os.Parcelable
 import androidx.room.PrimaryKey
 import androidx.room.TypeConverters
+import com.daon.goj_gam.data.entity.Entity
 import com.daon.goj_gam.screen.main.home.restaurant.RestaurantCategory
 import com.daon.goj_gam.util.converter.RoomTypeConverters
 import kotlinx.android.parcel.Parcelize
