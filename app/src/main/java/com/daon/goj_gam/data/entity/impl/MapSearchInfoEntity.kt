@@ -1,7 +1,7 @@
-package com.daon.goj_gam.data.entity
+package com.daon.goj_gam.data.entity.impl
 
 import android.os.Parcelable
-import kotlinx.android.parcel.Parcelize
+import kotlinx.parcelize.Parcelize
 
 @Parcelize
 data class MapSearchInfoEntity(
