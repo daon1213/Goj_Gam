@@ -1,7 +1,7 @@
 package com.daon.goj_gam.screen.main.home.restaurant
 
 import androidx.core.os.bundleOf
-import com.daon.goj_gam.data.entity.LocationLatLngEntity
+import com.daon.goj_gam.data.entity.impl.LocationLatLngEntity
 import com.daon.goj_gam.databinding.FragmentRestaurantListBinding
 import com.daon.goj_gam.model.restaurant.RestaurantModel
 import com.daon.goj_gam.screen.base.BaseFragment
