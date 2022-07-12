@@ -1,6 +1,6 @@
 package com.daon.goj_gam.model.restaurant
 
-import com.daon.goj_gam.data.entity.RestaurantEntity
+import com.daon.goj_gam.data.entity.impl.RestaurantEntity
 import com.daon.goj_gam.model.CellType
 import com.daon.goj_gam.model.Model
 import com.daon.goj_gam.screen.main.home.restaurant.RestaurantCategory
