@@ -9,8 +9,8 @@ import android.widget.Toast
 import androidx.core.view.isGone
 import androidx.core.view.isVisible
 import com.daon.goj_gam.R
-import com.daon.goj_gam.data.entity.LocationLatLngEntity
-import com.daon.goj_gam.data.entity.MapSearchInfoEntity
+import com.daon.goj_gam.data.entity.impl.LocationLatLngEntity
+import com.daon.goj_gam.data.entity.impl.MapSearchInfoEntity
 import com.daon.goj_gam.databinding.ActivityMyLocationBinding
 import com.daon.goj_gam.screen.base.BaseActivity
 import com.daon.goj_gam.screen.main.home.HomeViewModel
