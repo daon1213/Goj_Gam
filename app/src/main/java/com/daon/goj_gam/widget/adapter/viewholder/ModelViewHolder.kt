@@ -5,7 +5,6 @@ import androidx.viewbinding.ViewBinding
 import com.daon.goj_gam.model.Model
 import com.daon.goj_gam.screen.base.BaseViewModel
 import com.daon.goj_gam.util.provider.ResourcesProvider
-import com.daon.goj_gam.widget.adapter.listener.AdapterListener
 
 abstract class ModelViewHolder<M: Model>(
     binding: ViewBinding,
@@ -19,6 +18,6 @@ abstract class ModelViewHolder<M: Model>(
         reset()
     }
 
-    abstract fun bindViews(model: M, adapterListener: AdapterListener)
+    abstract fun bindViews(model: M, adapterListener: Any)
 
 }
