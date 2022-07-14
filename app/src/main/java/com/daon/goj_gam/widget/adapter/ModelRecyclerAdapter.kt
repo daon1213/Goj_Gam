@@ -7,14 +7,13 @@ import com.daon.goj_gam.model.Model
 import com.daon.goj_gam.screen.base.BaseViewModel
 import com.daon.goj_gam.util.mapper.ModelViewHolderMapper
 import com.daon.goj_gam.util.provider.ResourcesProvider
-import com.daon.goj_gam.widget.adapter.listener.restaurant.RestaurantListListener
 import com.daon.goj_gam.widget.adapter.viewholder.ModelViewHolder
 
 class ModelRecyclerAdapter<M: Model, VM: BaseViewModel>(
     private var modelList: List<Model>,
     private val viewModel: VM,
     private val resourceProvider: ResourcesProvider,
-    private val adapterListener: RestaurantListListener
+    private val adapterListener: Any
 ): ListAdapter<Model, ModelViewHolder<M>>(Model.DIFF_CALLBACK) {
 
     override fun getItemCount(): Int = modelList.size
