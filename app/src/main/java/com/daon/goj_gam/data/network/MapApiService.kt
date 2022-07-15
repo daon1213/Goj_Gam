@@ -1,7 +1,7 @@
 package com.daon.goj_gam.data.network
 
-import com.daon.goj_gam.data.reponse.address.AddressInfoResponse
-import com.daon.goj_gam.data.reponse.search.SearchResponse
+import com.daon.goj_gam.data.response.address.AddressInfoResponse
+import com.daon.goj_gam.data.response.search.SearchResponse
 import com.daon.goj_gam.data.url.Key
 import com.daon.goj_gam.data.url.Url
 import retrofit2.Response
