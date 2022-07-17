@@ -3,8 +3,10 @@ package com.daon.goj_gam.screen.main.home
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
 import com.daon.goj_gam.R
-import com.daon.goj_gam.data.entity.LocationLatLngEntity
-import com.daon.goj_gam.data.entity.MapSearchInfoEntity
+import com.daon.goj_gam.data.entity.impl.LocationLatLngEntity
+import com.daon.goj_gam.data.entity.impl.MapSearchInfoEntity
+import com.daon.goj_gam.data.entity.impl.RestaurantFoodEntity
+import com.daon.goj_gam.data.repository.food.RestaurantFoodRepository
 import com.daon.goj_gam.data.repository.map.MapRepository
 import com.daon.goj_gam.data.repository.user.UserRepository
 import com.daon.goj_gam.screen.base.BaseViewModel
@@ -12,7 +14,8 @@ import kotlinx.coroutines.launch
 
 class HomeViewModel(
     private val mapRepository: MapRepository,
-    private val userRepository: UserRepository
+    private val userRepository: UserRepository,
+    private val restaurantFoodRepository: RestaurantFoodRepository
 ):BaseViewModel() {
 
     companion object {
@@ -20,6 +23,8 @@ class HomeViewModel(
     }
 
     val homeStateLiveData = MutableLiveData<HomeState>(HomeState.Uninitialized)
+
+    var foodMenuBasketLiveData = MutableLiveData<List<RestaurantFoodEntity>>()
 
     fun loadReverseGeoInformation(
         locationLatLngEntity: LocationLatLngEntity
@@ -48,6 +53,10 @@ class HomeViewModel(
             }
         }
         return null
+    }
+
+    fun checkMyBasket() = viewModelScope.launch {
+        foodMenuBasketLiveData.value = restaurantFoodRepository.getAllFoodMenuListInBasket()
     }
 
 }
