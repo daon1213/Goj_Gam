@@ -1,7 +1,7 @@
 package com.daon.goj_gam.screen.main.home
 
 import androidx.annotation.StringRes
-import com.daon.goj_gam.data.entity.MapSearchInfoEntity
+import com.daon.goj_gam.data.entity.impl.MapSearchInfoEntity
 
 sealed class HomeState {
 
