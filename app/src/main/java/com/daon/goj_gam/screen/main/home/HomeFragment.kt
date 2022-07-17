@@ -12,8 +12,8 @@ import androidx.activity.result.contract.ActivityResultContracts
 import androidx.core.view.isGone
 import androidx.core.view.isVisible
 import com.daon.goj_gam.R
-import com.daon.goj_gam.data.entity.LocationLatLngEntity
-import com.daon.goj_gam.data.entity.MapSearchInfoEntity
+import com.daon.goj_gam.data.entity.impl.LocationLatLngEntity
+import com.daon.goj_gam.data.entity.impl.MapSearchInfoEntity
 import com.daon.goj_gam.databinding.FragmentHomeBinding
 import com.daon.goj_gam.screen.base.BaseFragment
 import com.daon.goj_gam.screen.main.home.restaurant.RestaurantCategory
@@ -72,33 +72,49 @@ class HomeFragment : BaseFragment<HomeViewModel, FragmentHomeBinding>() {
             }
         }
 
-    override fun observeData() = viewModel.homeStateLiveData.observe(viewLifecycleOwner) {
-        when (it) {
-            HomeState.Uninitialized -> {
-                getMyLocation()
-            }
-            HomeState.Loading -> {
-                binding.locationLoading.isVisible = true
-                binding.locationTitleText.text = getString(R.string.loading)
-            }
-            is HomeState.Success -> {
-                binding.locationLoading.isGone = true
-                binding.locationTitleText.text = it.mapSearchInfo.fullAddress
-                binding.tabLayout.isVisible = true
-                binding.filterScrollView.isVisible = true
-                binding.viewPager.isVisible = true
-                initViewPager(it.mapSearchInfo.locationLatLng)
-                if (it.isLocationSame.not()) {
-                    Toast.makeText(requireContext(), R.string.request_check_location, Toast.LENGTH_SHORT).show()
-                }
-            }
-            is HomeState.Error -> {
-                binding.locationLoading.isGone = true
-                binding.locationTitleText.text = getString(R.string.error_location_dis_found)
-                binding.locationTitleText.setOnClickListener {
+    override fun observeData() {
+        viewModel.homeStateLiveData.observe(viewLifecycleOwner) {
+            when (it) {
+                HomeState.Uninitialized -> {
                     getMyLocation()
                 }
-                Toast.makeText(requireContext(), it.messageId, Toast.LENGTH_SHORT).show()
+                HomeState.Loading -> {
+                    binding.locationLoading.isVisible = true
+                    binding.locationTitleText.text = getString(R.string.loading)
+                }
+                is HomeState.Success -> {
+                    binding.locationLoading.isGone = true
+                    binding.locationTitleText.text = it.mapSearchInfo.fullAddress
+                    binding.tabLayout.isVisible = true
+                    binding.filterScrollView.isVisible = true
+                    binding.viewPager.isVisible = true
+                    initViewPager(it.mapSearchInfo.locationLatLng)
+                    if (it.isLocationSame.not()) {
+                        Toast.makeText(requireContext(),
+                            R.string.request_check_location,
+                            Toast.LENGTH_SHORT).show()
+                    }
+                }
+                is HomeState.Error -> {
+                    binding.locationLoading.isGone = true
+                    binding.locationTitleText.text = getString(R.string.error_location_dis_found)
+                    binding.locationTitleText.setOnClickListener {
+                        getMyLocation()
+                    }
+                    Toast.makeText(requireContext(), it.messageId, Toast.LENGTH_SHORT).show()
+                }
+            }
+        }
+        viewModel.foodMenuBasketLiveData.observe(this){
+            if (it.isNotEmpty()) {
+                binding.basketButtonContainer.isVisible = true
+                binding.basketCountTextView.text = getString(R.string.basket_count, it.size)
+                binding.basketButton.setOnClickListener {
+
+                }
+            } else {
+                binding.basketButtonContainer.isGone = true
+                binding.basketButton.setOnClickListener(null)
             }
         }
     }
@@ -172,6 +188,12 @@ class HomeFragment : BaseFragment<HomeViewModel, FragmentHomeBinding>() {
                 it.viewModel.setLocationLatLng(locationLatLng)
             }
         }
+    }
+
+    override fun onResume() {
+        super.onResume()
+        // 다시 main 으로 돌아올 때마다 장바구니에 담긴 메뉴 확인
+        viewModel.checkMyBasket()
     }
 
     private fun getMyLocation() {
