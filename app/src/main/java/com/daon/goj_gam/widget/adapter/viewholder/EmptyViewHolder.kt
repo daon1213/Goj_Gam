@@ -4,7 +4,6 @@ import com.daon.goj_gam.databinding.ViewholderEmptyBinding
 import com.daon.goj_gam.model.Model
 import com.daon.goj_gam.screen.base.BaseViewModel
 import com.daon.goj_gam.util.provider.ResourcesProvider
-import com.daon.goj_gam.widget.adapter.listener.AdapterListener
 
 class EmptyViewHolder(
     binding: ViewholderEmptyBinding,
@@ -15,6 +14,6 @@ class EmptyViewHolder(
 
     override fun reset() = Unit
 
-    override fun bindViews(model: Model, adapterListener: AdapterListener) = Unit
+    override fun bindViews(model: Model, adapterListener: Any) = Unit
 
 }
