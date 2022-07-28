@@ -1,7 +1,7 @@
 package com.daon.goj_gam.data.repository.restaurant
 
-import com.daon.goj_gam.data.entity.LocationLatLngEntity
-import com.daon.goj_gam.data.entity.RestaurantEntity
+import com.daon.goj_gam.data.entity.impl.LocationLatLngEntity
+import com.daon.goj_gam.data.entity.impl.RestaurantEntity
 import com.daon.goj_gam.data.network.MapApiService
 import com.daon.goj_gam.screen.main.home.restaurant.RestaurantCategory
 import com.daon.goj_gam.util.provider.ResourcesProvider
