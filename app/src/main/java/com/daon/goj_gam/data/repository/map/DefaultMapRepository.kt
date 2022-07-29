@@ -1,8 +1,8 @@
 package com.daon.goj_gam.data.repository.map
 
-import com.daon.goj_gam.data.entity.LocationLatLngEntity
+import com.daon.goj_gam.data.entity.impl.LocationLatLngEntity
 import com.daon.goj_gam.data.network.MapApiService
-import com.daon.goj_gam.data.reponse.address.AddressInfo
+import com.daon.goj_gam.data.response.address.AddressInfo
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.withContext
 
