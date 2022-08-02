@@ -37,6 +37,8 @@
         app:layout_constraintTop_toBottomOf="@id/reviewTitleText"
         app:layout_constraintStart_toStartOf="@id/reviewTitleText"
         android:isIndicator="true"
+        android:progressTint="@color/orange"
+        android:secondaryProgressTint="@color/gray_A8"
         tools:rating="4"/>
 
     <TextView
