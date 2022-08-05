@@ -3,6 +3,7 @@ plugins {
     id 'org.jetbrains.kotlin.android'
     id 'kotlin-parcelize'
     id 'kotlin-kapt'
+    id 'com.google.gms.google-services'
 }
 
 android {
@@ -61,6 +62,13 @@ dependencies {
     implementation 'androidx.core:core-ktx:1.7.0'
     implementation 'androidx.fragment:fragment-ktx:1.4.1'
 
+    // Koin DI
+    implementation 'org.koin:koin-android:2.2.2'
+    implementation 'org.koin:koin-android-scope:2.2.2'
+    implementation 'org.koin:koin-android-viewmodel:2.2.2'
+    implementation 'org.koin:koin-android-ext:2.2.2'
+    testImplementation 'org.koin:koin-test:2.1.5'
+
     // Koin Core features
     implementation 'io.insert-koin:koin-core:3.2.0'
     // Koin Test features
@@ -99,6 +107,10 @@ dependencies {
     implementation "androidx.room:room-runtime:2.4.2"
     kapt "androidx.room:room-compiler:2.4.2"
     implementation "androidx.room:room-ktx:2.4.2"
+
+    // Firebase
+    implementation platform('com.google.firebase:firebase-bom:30.3.1')
+    implementation 'com.google.firebase:firebase-analytics-ktx'
 
     // Firebase Auth
     implementation platform('com.google.firebase:firebase-bom:29.0.4')
