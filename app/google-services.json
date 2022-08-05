@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "823069190499",
+    "project_id": "gojgam-a3c95",
+    "storage_bucket": "gojgam-a3c95.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:823069190499:android:80426cf387f0aa32e04b56",
+        "android_client_info": {
+          "package_name": "com.daon.goj_gam"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "823069190499-m1fu34jnkmaio3j4adicltc56oegj6sb.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.daon.goj_gam",
+            "certificate_hash": "dda7ab0f98417fe27a2021468237e7524e36de58"
+          }
+        },
+        {
+          "client_id": "823069190499-e813v59r9kc0u9co4o4avrloh5genukf.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBE1A1O3e47mkU5L4MKEh6FsXKNzVMlshc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "823069190499-e813v59r9kc0u9co4o4avrloh5genukf.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
