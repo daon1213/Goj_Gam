@@ -43,7 +43,9 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="12dp"
         app:layout_constraintStart_toStartOf="@id/titleEditText"
-        app:layout_constraintTop_toBottomOf="@id/titleEditText" />
+        app:layout_constraintTop_toBottomOf="@id/titleEditText"
+        android:progressTint="@color/orange"
+        android:secondaryProgressTint="@color/gray_A8"/>
 
     <EditText
         android:id="@+id/contentEditText"
