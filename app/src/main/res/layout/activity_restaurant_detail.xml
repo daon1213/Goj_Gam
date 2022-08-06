@@ -140,6 +140,8 @@
                             android:id="@+id/ratingBar"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:progressTint="@color/orange"
+                            android:secondaryProgressTint="@color/gray_A8"
                             app:layout_constraintEnd_toStartOf="@id/ratingTextView"
                             app:layout_constraintHorizontal_chainStyle="packed"
                             app:layout_constraintStart_toStartOf="parent"
