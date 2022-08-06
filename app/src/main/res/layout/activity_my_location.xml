@@ -59,7 +59,7 @@
         android:layout_width="0dp"
         android:layout_height="64dp"
         android:layout_margin="8dp"
-        android:backgroundTint="@color/orange"
+        android:backgroundTint="@color/orange_yellow"
         android:text="@string/btn_location_text"
         android:textSize="16sp"
         android:textStyle="bold"
