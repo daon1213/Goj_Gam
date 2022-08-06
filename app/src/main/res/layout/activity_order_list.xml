@@ -71,6 +71,7 @@
         android:layout_margin="8dp"
         android:text="@string/do_order"
         android:textSize="16sp"
+        android:backgroundTint="@color/orange_yellow"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
