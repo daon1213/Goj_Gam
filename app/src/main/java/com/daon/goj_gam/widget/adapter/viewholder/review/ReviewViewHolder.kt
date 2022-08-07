@@ -37,8 +37,6 @@ class ReviewViewHolder(
         }
     }
 
-    override fun bindViews(model: ReviewModel, adapterListener: Any) {
-
-    }
+    override fun bindViews(model: ReviewModel, adapterListener: Any) = Unit
 
 }
