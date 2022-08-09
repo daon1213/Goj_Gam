@@ -15,7 +15,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Goj_Gam">
         <activity
-            android:name=".screen.main.MainActivity"
+            android:name=".screen.ani.SplashActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -23,8 +23,18 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".screen.mylocation.MyLocationActivity" />
-        <activity android:name=".screen.main.home.restaurant.detail.RestaurantDetailActivity" />
+        <activity
+            android:name=".screen.main.MainActivity"
+            android:exported="false" />
+        <activity
+            android:name=".screen.mylocation.MyLocationActivity"
+            android:exported="false" />
+        <activity
+            android:name=".screen.main.home.restaurant.detail.RestaurantDetailActivity"
+            android:exported="false" />
+        <activity android:name=".screen.order.OrderMenuListActivity" />
+        <activity android:name=".screen.main.review.AddReviewActivity" />
+        <activity android:name=".screen.main.review.gallery.GalleryActivity" />
 
         <meta-data
             android:name="com.google.android.geo.API_KEY"
