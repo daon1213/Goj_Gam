@@ -3,6 +3,7 @@ package com.daon.goj_gam
 import android.app.Application
 import android.content.Context
 import com.daon.goj_gam.di.appModule
+import org.koin.android.ext.koin.androidContext
 import org.koin.core.context.startKoin
 
 class GojGam : Application() {
@@ -12,6 +13,7 @@ class GojGam : Application() {
         appContext = this
 
         startKoin{
+            androidContext(this@GojGam)
             modules(appModule)
         }
     }
