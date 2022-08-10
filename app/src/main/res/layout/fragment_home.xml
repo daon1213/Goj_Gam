@@ -46,7 +46,7 @@
         app:tabIndicatorFullWidth="false"
         app:tabMaxWidth="0dp"
         app:tabMode="auto"
-        app:tabSelectedTextColor="@color/white"
+        app:tabSelectedTextColor="@color/black"
         tools:visibility="visible" />
 
     <View
