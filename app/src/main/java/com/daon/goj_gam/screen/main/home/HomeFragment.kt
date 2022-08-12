@@ -3,6 +3,7 @@ package com.daon.goj_gam.screen.main.home
 import android.Manifest
 import android.annotation.SuppressLint
 import android.app.Activity
+import android.app.AlertDialog
 import android.content.Context
 import android.location.Location
 import android.location.LocationListener
@@ -16,12 +17,15 @@ import com.daon.goj_gam.data.entity.impl.LocationLatLngEntity
 import com.daon.goj_gam.data.entity.impl.MapSearchInfoEntity
 import com.daon.goj_gam.databinding.FragmentHomeBinding
 import com.daon.goj_gam.screen.base.BaseFragment
+import com.daon.goj_gam.screen.main.MainActivity
+import com.daon.goj_gam.screen.main.MainTabMenu
 import com.daon.goj_gam.screen.main.home.restaurant.RestaurantCategory
 import com.daon.goj_gam.screen.main.home.restaurant.RestaurantListFragment
 import com.daon.goj_gam.screen.main.home.restaurant.RestaurantOrder
 import com.daon.goj_gam.screen.mylocation.MyLocationActivity
 import com.daon.goj_gam.widget.adapter.RestaurantListFragmentPagerAdapter
 import com.google.android.material.tabs.TabLayoutMediator
+import com.google.firebase.auth.FirebaseAuth
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 
@@ -37,6 +41,8 @@ class HomeFragment : BaseFragment<HomeViewModel, FragmentHomeBinding>() {
     private lateinit var locationManager: LocationManager
 
     private lateinit var myLocationListener: MyLocationListener
+
+    private val firebaseAuth by lazy {FirebaseAuth.getInstance()}
 
     private val changeLocationLauncher =
         registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result ->
@@ -110,13 +116,34 @@ class HomeFragment : BaseFragment<HomeViewModel, FragmentHomeBinding>() {
                 binding.basketButtonContainer.isVisible = true
                 binding.basketCountTextView.text = getString(R.string.basket_count, it.size)
                 binding.basketButton.setOnClickListener {
+                    if (firebaseAuth.currentUser == null) {
+                        alertLoginNeed {
+                            (requireActivity() as MainActivity).goToTab(MainTabMenu.MY)
+                        }
+                    } else {
 
+                    }
                 }
             } else {
                 binding.basketButtonContainer.isGone = true
                 binding.basketButton.setOnClickListener(null)
             }
         }
+    }
+
+    private fun alertLoginNeed(action: () -> Unit) {
+        AlertDialog.Builder(requireContext())
+            .setTitle("로그인이 필요합니다.")
+            .setMessage("주문하려면 로그인이 필요합니다. 마이탭으로 이동하시겠습니까?")
+            .setPositiveButton("이동"){dialog, _ ->
+                action()
+                dialog.dismiss()
+            }
+            .setNegativeButton("취소"){dialog,_ ->
+                dialog.dismiss()
+            }
+            .create()
+            .show()
     }
 
     override fun initViews() = with(binding) {
