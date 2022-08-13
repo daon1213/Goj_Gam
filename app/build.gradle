@@ -127,4 +127,7 @@ dependencies {
     // Lottie
     implementation "com.airbnb.android:lottie:3.6.1"
 
+    // Binding
+    kapt 'com.android.databinding:compiler:3.5.3'
+
 }
