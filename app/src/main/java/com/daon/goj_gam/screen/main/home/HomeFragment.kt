@@ -23,6 +23,7 @@ import com.daon.goj_gam.screen.main.home.restaurant.RestaurantCategory
 import com.daon.goj_gam.screen.main.home.restaurant.RestaurantListFragment
 import com.daon.goj_gam.screen.main.home.restaurant.RestaurantOrder
 import com.daon.goj_gam.screen.mylocation.MyLocationActivity
+import com.daon.goj_gam.screen.order.OrderMenuListActivity
 import com.daon.goj_gam.widget.adapter.RestaurantListFragmentPagerAdapter
 import com.google.android.material.tabs.TabLayoutMediator
 import com.google.firebase.auth.FirebaseAuth
@@ -121,7 +122,10 @@ class HomeFragment : BaseFragment<HomeViewModel, FragmentHomeBinding>() {
                             (requireActivity() as MainActivity).goToTab(MainTabMenu.MY)
                         }
                     } else {
-
+                        startActivity(
+                            OrderMenuListActivity.newInstance((requireContext())
+                            )
+                        )
                     }
                 }
             } else {
