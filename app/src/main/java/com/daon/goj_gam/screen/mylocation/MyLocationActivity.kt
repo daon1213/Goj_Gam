@@ -39,7 +39,7 @@ class MyLocationActivity : BaseActivity<MyLocationViewModel, ActivityMyLocationB
     private var isChangeLocation: Boolean = false
 
     override fun onMapReady(p0: GoogleMap) {
-        this.map = map ?: return
+        this.map = map ?: return // p0
         viewModel.fetchData()
     }
 
