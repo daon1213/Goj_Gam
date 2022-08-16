@@ -131,6 +131,8 @@ class MyFragment : BaseFragment<MyViewModel, FragmentMyBinding>() {
         profileImageView.load(state.profileImageUri.toString(), 60f)
         userNameTextView.text = state.userName
 
+        Toast.makeText(requireContext(), state.orderList.toString(), Toast.LENGTH_SHORT).show()
+
         adapter.submitList(state.orderList)
     }
 
