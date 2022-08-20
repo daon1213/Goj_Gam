@@ -59,6 +59,12 @@ class MyViewModel(
                         }
                     )
                 }
+                is DefaultOrderRepository.Result.Error -> {
+                    myStateLiveData.value = MyState.Error(
+                        R.string.error_to_order_history,
+                        orderMenuResult.e
+                    )
+                }
             }
         } ?: kotlin.run {
             _myStateLiveData.value = MyState.Success.NotRegistered
