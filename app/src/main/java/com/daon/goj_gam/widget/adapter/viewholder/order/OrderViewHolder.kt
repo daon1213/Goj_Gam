@@ -24,12 +24,14 @@ class OrderViewHolder(
             val foodMenuList = model.foodMenuList
 
             var orderDataStr = ""
+
             foodMenuList
                 .groupBy { it.title }
                 .entries.forEach { (title, menuList) ->
                         orderDataStr += "메뉴 : $title | 가격 : ${menuList.first().price}원 X ${menuList.size}\n"
+                    orderContentText.text = orderDataStr
                 }
-            orderContentText.text = orderDataStr
+            orderContentText.text = orderContentText.text.trim()
 
             orderTotalPriceText.text =
                 resourcesProvider.getString(
