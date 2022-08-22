@@ -71,6 +71,11 @@ class AddReviewActivity : BaseActivity<AddReviewViewModel, ActivityAddReviewBind
         ActivityAddReviewBinding.inflate(layoutInflater)
 
     override fun initViews() = with(binding) {
+
+        toolbar.setNavigationOnClickListener {
+            finish()
+        }
+
         photoRecyclerView.adapter = photoListAdapter
         titleTextView.text = getString(R.string.add_restaurant_review, restaurantTitle)
 
