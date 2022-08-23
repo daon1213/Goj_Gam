@@ -8,6 +8,7 @@
         android:id="@+id/photoImageView"
         android:layout_width="0dp"
         android:layout_height="0dp"
+        android:background="@drawable/bg_round_corner_8_black"
         app:layout_constraintDimensionRatio="W, 1:1"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -19,7 +20,9 @@
         android:layout_height="24dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
-        android:background="@drawable/button_round_corner_4_black_24"
+        android:background="@drawable/bg_round_corner_8_black"
+        android:backgroundTint="@color/white"
+        android:foreground="@drawable/ic_close"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
