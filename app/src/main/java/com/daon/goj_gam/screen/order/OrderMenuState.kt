@@ -10,7 +10,7 @@ sealed interface OrderMenuState{
     object Loading: OrderMenuState
 
     data class Success(
-        val restaurantFoodModelIst: List<FoodModel>? = null
+        val restaurantFoodModelList: List<FoodModel>? = null
     ): OrderMenuState
 
     object Order: OrderMenuState
