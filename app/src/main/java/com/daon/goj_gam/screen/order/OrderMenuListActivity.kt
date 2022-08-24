@@ -67,7 +67,7 @@ class OrderMenuListActivity :
     private fun handleSuccessState(state: OrderMenuState.Success) = with(binding) {
         progressBar.isGone = true
 
-        val menuOrderIsEmpty = state.restaurantFoodModelIst?.isEmpty() ?: true
+        val menuOrderIsEmpty = state.restaurantFoodModelList?.isEmpty() ?: true
         confirmButton.isEnabled = menuOrderIsEmpty.not()
         if (menuOrderIsEmpty) {
             Toast.makeText(
@@ -77,7 +77,7 @@ class OrderMenuListActivity :
             ).show()
             finish()
         } else {
-            adapter.submitList(state.restaurantFoodModelIst)
+            adapter.submitList(state.restaurantFoodModelList)
         }
     }
 
