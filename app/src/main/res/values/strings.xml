@@ -70,6 +70,11 @@
     <!-- 카메라 -->
     <string name="capture_text">촬영</string>
     <string name="image_preview">이미지 미리보기</string>
-    <string name="flash_text">Flash</string>
+    <string name="flash_text">플래시</string>
+    <string name="confirm">확인</string>
+    <string name="delete">삭제</string>
+
+    <!-- Image Preview -->
+    <string name="images_page">(%d/%d)</string>
 
 </resources>
