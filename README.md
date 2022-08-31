@@ -1,4 +1,4 @@
-# Goj_Gam - (a.k.a 곧감)
+# Goj_Gam(곶감) - (a.k.a 곧감)
 
 ![곶감 로고](https://user-images.githubusercontent.com/85875857/186288822-7c120514-4426-42f5-8600-816e37fe075a.png)
 
