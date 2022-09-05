@@ -68,18 +68,18 @@ dependencies {
     testImplementation 'io.insert-koin:koin-test:3.2.0'
 
     // Koin main features for Android
-    implementation 'io.insert-koin:koin-android:3.2.0-beta-1'
+    implementation 'io.insert-koin:koin-android:3.2.0'
     // No more koin-android-viewmodel, koin-android-scope, koin-android-fragment
 
     //okhttp
     implementation "io.grpc:grpc-okhttp:1.44.1"
 
     // Java Compatibility
-    implementation 'io.insert-koin:koin-android-compat:3.2.0-beta-1'
+    implementation 'io.insert-koin:koin-android-compat:3.2.0'
     // Jetpack WorkManager
-    implementation 'io.insert-koin:koin-androidx-workmanager:3.2.0-beta-1'
+    implementation 'io.insert-koin:koin-androidx-workmanager:3.2.0'
     // Navigation Graph
-    implementation 'io.insert-koin:koin-androidx-navigation:3.2.0-beta-1'
+    implementation 'io.insert-koin:koin-androidx-navigation:3.2.0'
     // Jetpack Compose
     implementation 'io.insert-koin:koin-androidx-compose:3.2.0-beta-1'
 
