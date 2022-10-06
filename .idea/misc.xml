@@ -5,8 +5,14 @@
       <map>
         <entry key="..\:/Users/user/AndroidStudioProjects/Goj_Gam/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.1" />
         <entry key="..\:/Users/user/AndroidStudioProjects/Goj_Gam/app/src/main/res/drawable/bg_filter_chip_state_list.xml" value="0.1" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/Goj_Gam/app/src/main/res/drawable/bg_frame_gallery.xml" value="0.2375" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/Goj_Gam/app/src/main/res/drawable/bg_round_corner_8_black.xml" value="0.2365" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/Goj_Gam/app/src/main/res/drawable/button_round_corner_4_black_24.xml" value="0.2365" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/Goj_Gam/app/src/main/res/drawable/ic_GojGam_background.xml" value="0.2375" />
         <entry key="..\:/Users/user/AndroidStudioProjects/Goj_Gam/app/src/main/res/drawable/ic_back_arrow.xml" value="0.1" />
         <entry key="..\:/Users/user/AndroidStudioProjects/Goj_Gam/app/src/main/res/drawable/ic_basket.xml" value="0.1" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/Goj_Gam/app/src/main/res/drawable/ic_check_disabled.xml" value="0.1" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/Goj_Gam/app/src/main/res/drawable/ic_check_enabled.xml" value="0.1" />
         <entry key="..\:/Users/user/AndroidStudioProjects/Goj_Gam/app/src/main/res/drawable/ic_clock.xml" value="0.1" />
         <entry key="..\:/Users/user/AndroidStudioProjects/Goj_Gam/app/src/main/res/drawable/ic_close.xml" value="0.1" />
         <entry key="..\:/Users/user/AndroidStudioProjects/Goj_Gam/app/src/main/res/drawable/ic_down.xml" value="0.1" />
@@ -18,15 +24,32 @@
         <entry key="..\:/Users/user/AndroidStudioProjects/Goj_Gam/app/src/main/res/drawable/ic_refresh.xml" value="0.1" />
         <entry key="..\:/Users/user/AndroidStudioProjects/Goj_Gam/app/src/main/res/drawable/ic_star.xml" value="0.1" />
         <entry key="..\:/Users/user/AndroidStudioProjects/Goj_Gam/app/src/main/res/drawable/ic_thunder.xml" value="0.1" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/Goj_Gam/app/src/main/res/layout/activity_add_review.xml" value="0.4" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/Goj_Gam/app/src/main/res/layout/activity_camera.xml" value="0.264" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/Goj_Gam/app/src/main/res/layout/activity_gallery.xml" value="0.23020833333333332" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/Goj_Gam/app/src/main/res/layout/activity_image_preview_list.xml" value="0.21666666666666667" />
         <entry key="..\:/Users/user/AndroidStudioProjects/Goj_Gam/app/src/main/res/layout/activity_main.xml" value="0.1" />
         <entry key="..\:/Users/user/AndroidStudioProjects/Goj_Gam/app/src/main/res/layout/activity_my_location.xml" value="0.175" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/Goj_Gam/app/src/main/res/layout/activity_order_list.xml" value="0.18888888888888888" />
         <entry key="..\:/Users/user/AndroidStudioProjects/Goj_Gam/app/src/main/res/layout/activity_restaurant_detail.xml" value="0.23072916666666668" />
-        <entry key="..\:/Users/user/AndroidStudioProjects/Goj_Gam/app/src/main/res/layout/fragment_home.xml" value="0.24653739612188366" />
-        <entry key="..\:/Users/user/AndroidStudioProjects/Goj_Gam/app/src/main/res/layout/fragment_my.xml" value="0.1" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/Goj_Gam/app/src/main/res/layout/activity_splash.xml" value="0.23020833333333332" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/Goj_Gam/app/src/main/res/layout/fragment_home.xml" value="0.2" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/Goj_Gam/app/src/main/res/layout/fragment_list.xml" value="0.13958333333333334" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/Goj_Gam/app/src/main/res/layout/fragment_my.xml" value="0.264" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/Goj_Gam/app/src/main/res/layout/fragment_restaurant_liked.xml" value="0.16" />
         <entry key="..\:/Users/user/AndroidStudioProjects/Goj_Gam/app/src/main/res/layout/fragment_restaurant_list.xml" value="0.1" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/Goj_Gam/app/src/main/res/layout/item_gallery.xml" value="0.152" />
         <entry key="..\:/Users/user/AndroidStudioProjects/Goj_Gam/app/src/main/res/layout/viewholder_empty.xml" value="0.1" />
-        <entry key="..\:/Users/user/AndroidStudioProjects/Goj_Gam/app/src/main/res/layout/viewholder_restaurant.xml" value="0.1" />
-        <entry key="..\:/Users/user/AndroidStudioProjects/Goj_Gam/app/src/main/res/menu/bottom_navigation_menu.xml" value="0.1" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/Goj_Gam/app/src/main/res/layout/viewholder_food_menu.xml" value="0.23020833333333332" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/Goj_Gam/app/src/main/res/layout/viewholder_image.xml" value="0.1" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/Goj_Gam/app/src/main/res/layout/viewholder_order.xml" value="0.23020833333333332" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/Goj_Gam/app/src/main/res/layout/viewholder_order_menu.xml" value="0.18888888888888888" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/Goj_Gam/app/src/main/res/layout/viewholder_photo_item.xml" value="0.23020833333333332" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/Goj_Gam/app/src/main/res/layout/viewholder_restaurant.xml" value="0.128" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/Goj_Gam/app/src/main/res/layout/viewholder_restaurant_liked.xml" value="0.23125" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/Goj_Gam/app/src/main/res/layout/viewholder_review.xml" value="0.264" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/Goj_Gam/app/src/main/res/menu/bottom_navigation_menu.xml" value="0.264" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/Goj_Gam/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.2375" />
       </map>
     </option>
   </component>
