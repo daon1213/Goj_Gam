@@ -4,7 +4,7 @@
 
 ---
 
-## 아키텍쳐
+## Architecture
 ![아키텍쳐 비교](https://imgur.com/D6hcdF5.jpg)
 
 ## 과정
