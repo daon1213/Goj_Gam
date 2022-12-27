@@ -26,7 +26,6 @@ class RestaurantLikedListFragment :
         ModelRecyclerAdapter<RestaurantModel, RestaurantLikedListViewModel>(
             listOf(),
             viewModel,
-            resourcesProvider,
             adapterListener = object : RestaurantLikedListListener {
                 override fun onDislikeItem(model: RestaurantModel) {
                     viewModel.dislikeRestaurant(model.toEntity())

@@ -26,7 +26,6 @@ class OrderMenuListActivity :
         ModelRecyclerAdapter<FoodModel, OrderMenuListViewModel>(
             listOf(),
             viewModel,
-            resourcesProvider,
             adapterListener = object : OrderMenuListListener {
                 override fun onRemoveItem(foodModel: FoodModel) {
                     viewModel.removeOrderMenu(foodModel)

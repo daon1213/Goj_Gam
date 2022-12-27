@@ -17,7 +17,7 @@ class RestaurantReviewListViewModel(
 ): BaseViewModel() {
 
     private val _reviewStateLiveData = MutableLiveData<RestaurantReviewState>(RestaurantReviewState.UnInitialized)
-    val reviewStateLiveDate
+    val reviewStateLiveData
         get() = _reviewStateLiveData
 
     override fun fetchData(): Job = viewModelScope.launch{

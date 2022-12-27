@@ -65,7 +65,6 @@ class MyFragment : BaseFragment<MyViewModel, FragmentMyBinding>() {
         ModelRecyclerAdapter<OrderModel, MyViewModel>(
             listOf(),
             viewModel,
-            resourceProvider,
             adapterListener = object : OrderListListener {
                 override fun onClickItem(orderModel: OrderModel) {
                     startActivity(

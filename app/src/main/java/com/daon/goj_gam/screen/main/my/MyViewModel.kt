@@ -1,5 +1,6 @@
 package com.daon.goj_gam.screen.main.my
 
+import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
 import com.daon.goj_gam.R
@@ -17,44 +18,47 @@ import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 
 class MyViewModel(
-    private val preferenceManager: AppPreferenceManager,
+    private val appPreferenceManager: AppPreferenceManager,
     private val userRepository: UserRepository,
     private val orderRepository: OrderRepository
-) : BaseViewModel() {
+): BaseViewModel() {
 
-    private val _myStateLiveData = MutableLiveData<MyState>(MyState.UnInitialized)
-    val myStateLiveData
-        get() = _myStateLiveData
+    val myStateLiveData = MutableLiveData<MyState>(MyState.UnInitialized)
 
-    fun saveToken(token: String) = viewModelScope.launch {
+    override fun fetchData(): Job = viewModelScope.launch {
+        myStateLiveData.value = MyState.Loading
+        appPreferenceManager.getIdToken()?.let {
+            myStateLiveData.value = MyState.Login(it)
+        } ?: kotlin.run {
+            myStateLiveData.value = MyState.Success.NotRegistered
+        }
+    }
+
+    fun saveToken(idToken: String) = viewModelScope.launch {
         withContext(Dispatchers.IO) {
-            preferenceManager.putIdToken(token)
+            appPreferenceManager.putIdToken(idToken)
             fetchData()
         }
     }
 
+    @Suppress("UNCHECKED_CAST")
     fun setUserInfo(firebaseUser: FirebaseUser?) = viewModelScope.launch {
         firebaseUser?.let { user ->
-            when (val orderMenuResult = orderRepository.getAllOrderMenus(user.uid)) {
-                is DefaultOrderRepository.Result.Error -> {
-                    _myStateLiveData.value = MyState.Error(
-                        R.string.error_to_order_history,
-                        orderMenuResult.e
-                    )
-                }
+            when (val orderMenusResult = orderRepository.getAllOrderMenus(user.uid)) {
                 is DefaultOrderRepository.Result.Success<*> -> {
-                    val orderList = orderMenuResult.data as List<OrderEntity>
-                    _myStateLiveData.value = MyState.Success.Registered(
-                        userName = user.displayName ?: "익명",
-                        profileImageUri = user.photoUrl,
-                        orderList = orderList.map {
+                    val orderList: List<OrderEntity> = orderMenusResult.data as List<OrderEntity>
+                    Log.e("orders", orderMenusResult.data.toString())
+                    myStateLiveData.value = MyState.Success.Registered(
+                        user.displayName ?: "익명",
+                        user.photoUrl,
+                        orderList.map { order ->
                             OrderModel(
-                                id = it.hashCode().toLong(),
-                                orderId = it.id,
-                                userId = it.userId,
-                                restaurantId = it.restaurantId,
-                                foodMenuList = it.foodMenuList,
-                                restaurantTitle = it.restaurantTitle
+                                id = order.hashCode().toLong(),
+                                orderId = order.id,
+                                userId = order.userId,
+                                restaurantId = order.restaurantId,
+                                foodMenuList = order.foodMenuList,
+                                restaurantTitle = order.restaurantTitle
                             )
                         }
                     )
@@ -62,33 +66,22 @@ class MyViewModel(
                 is DefaultOrderRepository.Result.Error -> {
                     myStateLiveData.value = MyState.Error(
                         R.string.error_to_order_history,
-                        orderMenuResult.e
+                        orderMenusResult.e
                     )
                 }
             }
-        } ?: kotlin.run {
-            _myStateLiveData.value = MyState.Success.NotRegistered
-        }
-    }
 
-    override fun fetchData(): Job = viewModelScope.launch {
-        try {
-            _myStateLiveData.value = MyState.Loading
-            preferenceManager.getIdToken()?.let {
-                _myStateLiveData.value = MyState.Login(it)
-            } ?: kotlin.run {
-                _myStateLiveData.value = MyState.Success.NotRegistered
-            }
-        } catch (exception: Exception) {
-            _myStateLiveData.value = MyState.Error(R.string.error_location_dis_found, exception)
+        } ?: kotlin.run {
+            myStateLiveData.value = MyState.Success.NotRegistered
         }
     }
 
     fun signOut() = viewModelScope.launch {
         withContext(Dispatchers.IO) {
-            preferenceManager.removeIdToken()
+            appPreferenceManager.removeIdToken()
         }
         userRepository.deleteAllUserLikedRestaurant()
         fetchData()
     }
+
 }

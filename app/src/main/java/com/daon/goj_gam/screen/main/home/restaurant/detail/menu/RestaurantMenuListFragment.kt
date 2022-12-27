@@ -42,7 +42,6 @@ class RestaurantMenuListFragment :
         ModelRecyclerAdapter<FoodModel, RestaurantMenuListViewModel>(
             listOf(),
             viewModel,
-            resourceProvider,
             adapterListener = object : FoodMenuListListener {
                 override fun onClickItem(model: FoodModel) {
                     viewModel.insertMenuInBasket(model)

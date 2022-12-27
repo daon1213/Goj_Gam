@@ -35,7 +35,6 @@ class RestaurantListFragment :
     private val adapter by lazy {
         ModelRecyclerAdapter<RestaurantModel, RestaurantListViewModel>(listOf(),
             viewModel,
-            resourcesProvider,
             adapterListener = object : RestaurantListListener {
                 override fun onClickItem(model: RestaurantModel) {
                     startActivity(
