@@ -5,7 +5,6 @@ import android.content.Context
 import android.content.Intent
 import android.os.Handler
 import android.os.Looper
-import android.widget.Toast
 import androidx.core.view.isGone
 import androidx.core.view.isVisible
 import com.daon.goj_gam.R
@@ -30,32 +29,26 @@ class MyLocationActivity : BaseActivity<MyLocationViewModel, ActivityMyLocationB
         )
     }
 
-    override fun getViewBinding(): ActivityMyLocationBinding = ActivityMyLocationBinding.inflate(layoutInflater)
-
-    private lateinit var map: GoogleMap
-
-    private var isMapInitialized: Boolean = false
-
-    private var isChangeLocation: Boolean = false
-
-    override fun onMapReady(p0: GoogleMap) {
-        this.map = map ?: return // p0
-        viewModel.fetchData()
-    }
+    override fun getViewBinding() = ActivityMyLocationBinding.inflate(layoutInflater)
 
     companion object {
-
         const val CAMERA_ZOOM_LEVEL = 17f
 
         fun newIntent(context: Context, mapSearchInfoEntity: MapSearchInfoEntity) =
             Intent(context, MyLocationActivity::class.java).apply {
                 putExtra(HomeViewModel.MY_LOCATION_KEY, mapSearchInfoEntity)
             }
+
     }
+
+    private lateinit var map: GoogleMap
+
+    private var isMapInitialized: Boolean = false
+    private var isChangingLocation: Boolean = false
 
     override fun initViews() = with(binding) {
         toolbar.setNavigationOnClickListener {
-            finish()
+            onBackPressed()
         }
         confirmButton.setOnClickListener {
             viewModel.confirmSelectLocation()
@@ -68,26 +61,25 @@ class MyLocationActivity : BaseActivity<MyLocationViewModel, ActivityMyLocationB
         mapFragment.getMapAsync(this)
     }
 
-    override fun observeData() = viewModel.myLocationStateLiveData.observe(this) {
-        when (it) {
-            is MyLocationState.Loading -> {
-                handleLoadingState()
-            }
-            is MyLocationState.Success -> {
-                if (::map.isInitialized) {
-                    handleSuccessState(it)
+    override fun observeData() {
+        viewModel.myLocationStateLiveData.observe(this) {
+            when (it) {
+                is MyLocationState.Loading -> {
+                    handleLoadingState()
                 }
+                is MyLocationState.Success -> {
+                    if (::map.isInitialized) {
+                        handleSuccessState(it)
+                    }
+                }
+                is MyLocationState.Confirm -> {
+                    setResult(Activity.RESULT_OK, Intent().apply {
+                        putExtra(HomeViewModel.MY_LOCATION_KEY, it.mapSearchInfoEntity)
+                    })
+                    finish()
+                }
+                else -> Unit
             }
-            is MyLocationState.Confirm -> {
-                setResult(Activity.RESULT_OK, Intent().apply {
-                    putExtra(HomeViewModel.MY_LOCATION_KEY, it.mapSearchInfoEntity)
-                })
-                finish()
-            }
-            is MyLocationState.Error -> {
-                Toast.makeText(this, it.messageID, Toast.LENGTH_SHORT).show()
-            }
-            else -> Unit
         }
     }
 
@@ -100,7 +92,7 @@ class MyLocationActivity : BaseActivity<MyLocationViewModel, ActivityMyLocationB
         val mapSearchInfo = state.mapSearchInfoEntity
         locationLoading.isGone = true
         locationTitleText.text = mapSearchInfo.fullAddress
-        if (!isMapInitialized) {
+        if (isMapInitialized.not()) {
             map.moveCamera(
                 CameraUpdateFactory.newLatLngZoom(
                     LatLng(
@@ -109,9 +101,10 @@ class MyLocationActivity : BaseActivity<MyLocationViewModel, ActivityMyLocationB
                     ), CAMERA_ZOOM_LEVEL
                 )
             )
+
             map.setOnCameraIdleListener {
-                if (isChangeLocation.not()) {
-                    isChangeLocation = true
+                if (isChangingLocation.not()) {
+                    isChangingLocation = true
                     Handler(Looper.getMainLooper()).postDelayed({
                         val cameraLatLng = map.cameraPosition.target
                         viewModel.changeLocationInfo(
@@ -120,12 +113,18 @@ class MyLocationActivity : BaseActivity<MyLocationViewModel, ActivityMyLocationB
                                 cameraLatLng.longitude
                             )
                         )
-                        isChangeLocation = false
+                        isChangingLocation = false
                     }, 1000)
                 }
             }
             isMapInitialized = true
         }
     }
+
+    override fun onMapReady(map: GoogleMap) {
+        this.map = map ?: return
+        viewModel.fetchData()
+    }
+
 
 }
